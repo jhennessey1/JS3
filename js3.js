@@ -1,46 +1,66 @@
 var phoneNumber = prompt("Enter your phone number with dashes. (xxx-xxx-xxxx)")
-
-if (charCounter(phoneNumber)) {
-	alert("That is a valid phone number")
-}
-else {
-	alert("That is an invalid phone number")
+var isValid = false
+while (!isValid) {
+	if (charCounter(phoneNumber)) {
+		// alert("That is a valid phone number")
+		isValid = true
+	}
+	else {
+		alert("That is an invalid phone number")
+		phoneNumber = prompt("Enter your phone number with dashes. (xxx-xxx-xxxx)")
+	}
 }
 
 var birthday = prompt("What is your date of birth? (mm/dd/yy)")
 
-if (birthdayValidate(birthday)) {
-	alert("That is a valid date of birth.")
-}
-else {
-	alert("That is not a valid date of birth.")
+while (isValid) {
+	if (birthdayValidate(birthday)) {
+		// alert("That is a valid date of birth.")
+		isValid = false
+	}
+	else {
+		alert("That is not a valid date of birth.")
+		birthday = prompt("What is your date of birth? (mm/dd/yy)")
+	}
 }
 
 var postalCode = prompt("What is your postal code?")
 
-if (postalValidate(postalCode)) {
-	alert("That is a valid postal code.")
-}
-else {
-	alert("That is not a valid postal code.")
+while(!isValid) {
+	if (postalValidate(postalCode)) {
+		// alert("That is a valid postal code.")
+		isValid = true
+	}
+	else {
+		alert("That is not a valid postal code.")
+		postalCode = prompt("What is your postal code?")
+	}
 }
 
 var state = prompt("In what state do you reside? (two letter abbreviation)")
 
-if (stateValidate(state)) {
-	alert("That is a valid state abbreviation.")
-}
-else {
-	alert("That is not a valid state abbreviation.")
+while(isValid) {
+	if (stateValidate(state)) {
+		// alert("That is a valid state abbreviation.")
+		isValid = false
+	}
+	else {
+		alert("That is not a valid state abbreviation.")
+		state = prompt("In what state do you reside? (two letter abbreviation)")
+	}
 }
 
 var maritalStatus = prompt("Are you married? (yes or no)")
 
-if (maritalStatus.toLowerCase() === "yes" || maritalStatus.toLowerCase() === "no") {
-	alert("Ok")
-}
-else {
-	alert("Yes or no, please.")
+while(!isValid) {
+	if (maritalStatus.toLowerCase() === "yes" || maritalStatus.toLowerCase() === "no") {
+		alert("Ok")
+		isValid = true
+	}
+	else {
+		alert("Invalid response.")
+		maritalStatus = prompt("Are you married? (yes or no)")
+	}
 }
 
 function charCounter(number) {
