@@ -37,7 +37,7 @@ while(!isValid) {
 	}
 }
 
-var state = prompt("In what state do you reside? (two letter abbreviation)")
+var state = prompt("In which state do you reside? (two letter abbreviation)")
 
 while(isValid) {
 	if (stateValidate(state)) {
@@ -46,7 +46,7 @@ while(isValid) {
 	}
 	else {
 		alert("That is not a valid state abbreviation.")
-		state = prompt("In what state do you reside? (two letter abbreviation)")
+		state = prompt("In which state do you reside? (two letter abbreviation)")
 	}
 }
 
